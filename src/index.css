@@ -1,0 +1,52 @@
+@import 'tailwindcss';
+@import './styles/variables.css';
+@import './styles/components.css';
+@import './styles/showcase.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* Custom JS handles in-page nav for a slower ease; keep auto to avoid double-smooth fighting. */
+  scroll-behavior: auto;
+  color-scheme: light;
+}
+
+html[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  font-family: var(--acme-font);
+  font-size: var(--acme-fs-base);
+  line-height: var(--acme-lh-normal);
+  color: var(--acme-text);
+  background: var(--acme-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: var(--acme-primary);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: var(--acme-primary-subtle);
+  color: var(--acme-text);
+}
