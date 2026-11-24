@@ -28,7 +28,7 @@ export function CardShowcase() {
           <div className="showcase-stat">
             <span className="showcase-stat__label">Active sessions</span>
             <span className="showcase-stat__value">1,284</span>
-            <span style={{ color: 'var(--acme-success)', fontSize: 13, display: 'inline-flex', alignItems: 'center', gap: 4 }}>
+            <span style={{ color: 'var(--acme-success)', fontSize: 'var(--acme-fs-xs)', display: 'inline-flex', alignItems: 'center', gap: 4 }}>
               <TrendingUp size={14} /> +12.4% this week
             </span>
           </div>
@@ -42,7 +42,7 @@ export function CardShowcase() {
                 height: 40,
                 borderRadius: 10,
                 background: 'var(--acme-primary-subtle)',
-                color: 'var(--acme-primary)',
+                color: 'var(--acme-primary-text)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -58,7 +58,7 @@ export function CardShowcase() {
         </Card>
 
         <Card title="Information" subtitle="Neutral guidance">
-          <div style={{ display: 'flex', gap: 8, color: 'var(--acme-info)', fontSize: 14 }}>
+          <div style={{ display: 'flex', gap: 8, color: 'var(--acme-info)', fontSize: 'var(--acme-fs-sm)' }}>
             <Info size={16} style={{ marginTop: 2, flexShrink: 0 }} />
             Keep card content concise and action-oriented.
           </div>
@@ -77,7 +77,7 @@ export function CardShowcase() {
             </>
           }
         >
-          <p style={{ margin: 0, fontSize: 14, color: 'var(--acme-text-secondary)' }}>
+          <p style={{ margin: 0, fontSize: 'var(--acme-fs-sm)', color: 'var(--acme-text-secondary)' }}>
             Footer actions belong to the card context.
           </p>
         </Card>
@@ -90,21 +90,21 @@ export function CardShowcase() {
             </Button>
           }
         >
-          <p style={{ margin: 0, fontSize: 14, color: 'var(--acme-text-secondary)' }}>
+          <p style={{ margin: 0, fontSize: 'var(--acme-fs-sm)', color: 'var(--acme-text-secondary)' }}>
             Header actions keep primary controls visible.
           </p>
         </Card>
 
         <Card variant="border" title="Border card">
-          <p style={{ margin: 0, fontSize: 14, color: 'var(--acme-text-secondary)' }}>Stronger border emphasis.</p>
+          <p style={{ margin: 0, fontSize: 'var(--acme-fs-sm)', color: 'var(--acme-text-secondary)' }}>Stronger border emphasis.</p>
         </Card>
 
         <Card variant="shadow" title="Shadow card">
-          <p style={{ margin: 0, fontSize: 14, color: 'var(--acme-text-secondary)' }}>Elevated surface with soft shadow.</p>
+          <p style={{ margin: 0, fontSize: 'var(--acme-fs-sm)', color: 'var(--acme-text-secondary)' }}>Elevated surface with soft shadow.</p>
         </Card>
 
         <Card variant="hover" title="Hover card">
-          <p style={{ margin: 0, fontSize: 14, color: 'var(--acme-text-secondary)' }}>
+          <p style={{ margin: 0, fontSize: 'var(--acme-fs-sm)', color: 'var(--acme-text-secondary)' }}>
             Smooth lift, primary border accent, and soft shadow on hover.
           </p>
         </Card>
@@ -114,7 +114,7 @@ export function CardShowcase() {
             <CheckCircle2 size={18} />
             <strong>Success card</strong>
           </div>
-          <p style={{ margin: '8px 0 0', fontSize: 14, color: 'var(--acme-success-text)' }}>Operation completed without issues.</p>
+          <p style={{ margin: '8px 0 0', fontSize: 'var(--acme-fs-sm)', color: 'var(--acme-success-text)' }}>Operation completed without issues.</p>
         </Card>
 
         <Card variant="warning">
@@ -122,7 +122,7 @@ export function CardShowcase() {
             <AlertTriangle size={18} />
             <strong>Warning card</strong>
           </div>
-          <p style={{ margin: '8px 0 0', fontSize: 14, color: 'var(--acme-warning-text)' }}>Review pending items before continuing.</p>
+          <p style={{ margin: '8px 0 0', fontSize: 'var(--acme-fs-sm)', color: 'var(--acme-warning-text)' }}>Review pending items before continuing.</p>
         </Card>
 
         <Card variant="error">
@@ -130,7 +130,7 @@ export function CardShowcase() {
             <ShieldAlert size={18} />
             <strong>Error card</strong>
           </div>
-          <p style={{ margin: '8px 0 0', fontSize: 14, color: 'var(--acme-error-text)' }}>Something needs attention right away.</p>
+          <p style={{ margin: '8px 0 0', fontSize: 'var(--acme-fs-sm)', color: 'var(--acme-error-text)' }}>Something needs attention right away.</p>
         </Card>
       </div>
 
@@ -144,7 +144,7 @@ export function CardShowcase() {
           }}
         >
           <Card title="Dark surface card" subtitle="Uses ACME dark surface tokens">
-            <p style={{ margin: 0, fontSize: 14, color: 'var(--acme-text-secondary)' }}>
+            <p style={{ margin: 0, fontSize: 'var(--acme-fs-sm)', color: 'var(--acme-text-secondary)' }}>
               Cards inherit theme variables so surfaces stay readable in both modes. Current theme: {theme}.
             </p>
           </Card>

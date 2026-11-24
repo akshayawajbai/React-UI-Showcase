@@ -14,19 +14,27 @@ export function TypographyShowcase() {
             <p className="showcase-block__title">Headings</p>
             <div className="typo-sample">
               <h1>Heading H1</h1>
-              <p className="typo-meta">2.25rem / Bold / -0.03em</p>
+              <p className="typo-meta">32px (2rem) / Bold 700 / 1.25</p>
             </div>
             <div className="typo-sample">
               <h2>Heading H2</h2>
-              <p className="typo-meta">1.875rem / Bold</p>
+              <p className="typo-meta">28px (1.75rem) / Bold 700 / 1.25</p>
             </div>
             <div className="typo-sample">
               <h3>Heading H3</h3>
-              <p className="typo-meta">1.5rem / Semibold</p>
+              <p className="typo-meta">24px (1.5rem) / Semibold 600 / 1.375</p>
             </div>
             <div className="typo-sample">
               <h4>Heading H4</h4>
-              <p className="typo-meta">1.25rem / Semibold</p>
+              <p className="typo-meta">20px (1.25rem) / Semibold 600 / 1.375</p>
+            </div>
+            <div className="typo-sample">
+              <h5>Heading H5</h5>
+              <p className="typo-meta">18px (1.125rem) / Semibold 600 / 1.375</p>
+            </div>
+            <div className="typo-sample">
+              <h6>Heading H6</h6>
+              <p className="typo-meta">16px (1rem) / Semibold 600 / 1.5</p>
             </div>
           </div>
         </div>
@@ -34,8 +42,8 @@ export function TypographyShowcase() {
         <div className="showcase-panel">
           <div className="showcase-block">
             <p className="showcase-block__title">Section & card titles</p>
-            <p style={{ fontSize: 'var(--acme-fs-xl)', fontWeight: 700, margin: '0 0 8px' }}>Section heading</p>
-            <p style={{ fontSize: 'var(--acme-fs-md)', fontWeight: 600, margin: '0 0 16px' }}>Card heading</p>
+            <p style={{ fontSize: 'var(--acme-fs-xl)', fontWeight: 700, lineHeight: 1.25, margin: '0 0 8px' }}>Section heading</p>
+            <p style={{ fontSize: 'var(--acme-fs-base)', fontWeight: 600, margin: '0 0 16px' }}>Card heading</p>
             <p className="showcase-block__title">Body & supporting text</p>
             <p style={{ margin: '0 0 8px' }}>
               Body text — Primary interface copy for descriptions and content blocks.
@@ -65,21 +73,24 @@ export function TypographyShowcase() {
           <span style={{ fontWeight: 700 }}>Bold 700</span>
         </div>
         <div className="showcase-row" style={{ marginTop: 16 }}>
+          <span style={{ fontSize: 'var(--acme-fs-2xs)' }}>2XS 11px</span>
           <span style={{ fontSize: 'var(--acme-fs-xs)' }}>XS 12px</span>
           <span style={{ fontSize: 'var(--acme-fs-sm)' }}>SM 14px</span>
           <span style={{ fontSize: 'var(--acme-fs-base)' }}>Base 16px</span>
           <span style={{ fontSize: 'var(--acme-fs-md)' }}>MD 18px</span>
           <span style={{ fontSize: 'var(--acme-fs-lg)' }}>LG 20px</span>
           <span style={{ fontSize: 'var(--acme-fs-xl)' }}>XL 24px</span>
+          <span style={{ fontSize: 'var(--acme-fs-2xl)' }}>2XL 28px</span>
+          <span style={{ fontSize: 'var(--acme-fs-3xl)' }}>3XL 32px</span>
         </div>
       </div>
 
       <div className="showcase-panel" style={{ marginTop: 16 }}>
         <p className="showcase-block__title">Primary vs alternate</p>
-        <p style={{ margin: '0 0 8px', fontFamily: 'var(--acme-font)', fontSize: '1.25rem', fontWeight: 600 }}>
+        <p style={{ margin: '0 0 8px', fontFamily: 'var(--acme-font)', fontSize: 'var(--acme-fs-lg)', fontWeight: 600 }}>
           Rubik — primary ACME UI font
         </p>
-        <p style={{ margin: 0, fontFamily: 'var(--acme-font-alt)', fontSize: '1.25rem', fontWeight: 600 }}>
+        <p style={{ margin: 0, fontFamily: 'var(--acme-font-alt)', fontSize: 'var(--acme-fs-lg)', fontWeight: 600 }}>
           Roboto Slab — alternate display option
         </p>
       </div>

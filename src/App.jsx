@@ -44,7 +44,7 @@ function ShowcaseContent({ searchValue }) {
     <>
       {query && (
         <div className="showcase-panel" style={{ marginBottom: 24 }}>
-          <p style={{ margin: 0, fontSize: 14, color: 'var(--acme-text-secondary)' }}>
+          <p style={{ margin: 0, fontSize: 'var(--acme-fs-sm)', color: 'var(--acme-text-secondary)' }}>
             Showing {visible.length} of {NAV_ITEMS.length} sections matching &quot;{searchValue}&quot;.
           </p>
         </div>

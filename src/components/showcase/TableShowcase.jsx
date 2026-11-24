@@ -295,7 +295,7 @@ export function TableShowcase() {
                 onAction={openAdd}
               />
             ) : (
-              <p style={{ margin: 0, fontSize: 14, color: 'var(--acme-text-secondary)' }}>
+              <p style={{ margin: 0, fontSize: 'var(--acme-fs-sm)', color: 'var(--acme-text-secondary)' }}>
                 Use the interactive table below for full CRUD behavior.
               </p>
             )}
@@ -482,7 +482,7 @@ export function TableShowcase() {
         </div>
 
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 16, flexWrap: 'wrap', gap: 12 }}>
-          <p style={{ margin: 0, fontSize: 13, color: 'var(--acme-text-secondary)' }}>
+          <p style={{ margin: 0, fontSize: 'var(--acme-fs-xs)', color: 'var(--acme-text-secondary)' }}>
             {filtered.length} record(s) · {selected.length} selected
           </p>
           <Pagination page={Math.min(page, pageCount)} pageCount={pageCount} onChange={setPage} />
@@ -537,7 +537,7 @@ export function TableShowcase() {
         }
       >
         {viewTarget && (
-          <div style={{ display: 'grid', gap: 8, fontSize: 14 }}>
+          <div style={{ display: 'grid', gap: 8, fontSize: 'var(--acme-fs-sm)' }}>
             <p style={{ margin: 0 }}><strong>ID:</strong> {viewTarget.id}</p>
             <p style={{ margin: 0 }}><strong>Name:</strong> {viewTarget.name}</p>
             <p style={{ margin: 0 }}><strong>Category:</strong> {viewTarget.category}</p>

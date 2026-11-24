@@ -15,57 +15,26 @@ const ICON_COLORS = {
   info: 'var(--acme-info)',
 }
 
+/** Must match the @keyframes name in components.css. */
+const COUNTDOWN_ANIMATION = 'acme-toast-countdown'
+
+/**
+ * Auto-dismiss is driven by a CSS animation on the progress bar (see `.acme-toast__progress-bar`):
+ * - the browser pauses it with `:hover` (real pointer devices only) and `:focus-within`,
+ *   so it can never get stuck after a touch tap or a layout shift under a still mouse;
+ * - the toast closes when that animation ends.
+ */
 function ToastItem({ toast, onClose }) {
   const [leaving, setLeaving] = useState(false)
-  const [progress, setProgress] = useState(100)
-  const remainingRef = useRef(toast.duration || 0)
-  const startedRef = useRef(Date.now())
-  const frameRef = useRef(null)
-  const closeTimerRef = useRef(null)
   const leavingRef = useRef(false)
-  const pausedRef = useRef(false)
+  const closeTimerRef = useRef(null)
   const onCloseRef = useRef(onClose)
   const Icon = ICONS[toast.type] || Info
   const duration = toast.duration || 0
 
-  onCloseRef.current = onClose
-
-  const dismiss = () => {
-    if (leavingRef.current) return
-    leavingRef.current = true
-    setLeaving(true)
-    if (frameRef.current) {
-      cancelAnimationFrame(frameRef.current)
-      frameRef.current = null
-    }
-    closeTimerRef.current = setTimeout(() => onCloseRef.current(toast.id), 180)
-  }
-
   useEffect(() => {
-    if (!duration) return undefined
-
-    const tick = () => {
-      if (pausedRef.current || leavingRef.current) {
-        frameRef.current = requestAnimationFrame(tick)
-        return
-      }
-      const elapsed = Date.now() - startedRef.current
-      const left = Math.max(0, remainingRef.current - elapsed)
-      setProgress((left / duration) * 100)
-      if (left <= 0) {
-        dismiss()
-        return
-      }
-      frameRef.current = requestAnimationFrame(tick)
-    }
-
-    startedRef.current = Date.now()
-    frameRef.current = requestAnimationFrame(tick)
-
-    return () => {
-      if (frameRef.current) cancelAnimationFrame(frameRef.current)
-    }
-  }, [duration, toast.id])
+    onCloseRef.current = onClose
+  }, [onClose])
 
   useEffect(() => {
     return () => {
@@ -73,26 +42,20 @@ function ToastItem({ toast, onClose }) {
     }
   }, [])
 
-  const handleMouseEnter = () => {
-    if (!duration || leavingRef.current) return
-    const elapsed = Date.now() - startedRef.current
-    remainingRef.current = Math.max(0, remainingRef.current - elapsed)
-    pausedRef.current = true
+  const dismiss = () => {
+    if (leavingRef.current) return
+    leavingRef.current = true
+    setLeaving(true)
+    // Matches the 200ms slide-out animation before the toast is removed.
+    closeTimerRef.current = setTimeout(() => onCloseRef.current(toast.id), 180)
   }
 
-  const handleMouseLeave = () => {
-    if (!duration || leavingRef.current) return
-    startedRef.current = Date.now()
-    pausedRef.current = false
+  const handleCountdownEnd = (e) => {
+    if (e.animationName === COUNTDOWN_ANIMATION) dismiss()
   }
 
   return (
-    <div
-      className={`acme-toast acme-toast--${toast.type} ${leaving ? 'is-leaving' : ''}`}
-      role="status"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
+    <div className={`acme-toast acme-toast--${toast.type} ${leaving ? 'is-leaving' : ''}`} role="status">
       <div className="acme-toast__content">
         <Icon size={18} style={{ color: ICON_COLORS[toast.type], flexShrink: 0, marginTop: 2 }} />
         <div className="acme-toast__body">
@@ -107,10 +70,8 @@ function ToastItem({ toast, onClose }) {
         <div className="acme-toast__progress" aria-hidden="true">
           <div
             className={`acme-toast__progress-bar acme-toast__progress-bar--${toast.type}`}
-            style={{
-              width: `${progress}%`,
-              transition: pausedRef.current ? 'none' : 'width 80ms linear',
-            }}
+            style={{ animationDuration: `${duration}ms` }}
+            onAnimationEnd={handleCountdownEnd}
           />
         </div>
       )}

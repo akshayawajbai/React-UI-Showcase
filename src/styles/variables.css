@@ -1,30 +1,59 @@
 :root {
-  /* Brand */
-  --acme-primary: #00acd2;
-  --acme-primary-hover: #0098b8;
-  --acme-primary-active: #0084a0;
-  --acme-primary-subtle: rgba(0, 172, 210, 0.12);
-  --acme-primary-muted: rgba(0, 172, 210, 0.08);
+  /* Approved ACME ERP palette (final, six colors). Use the semantic tokens below in components. */
+  --acme-palette-primary: #014a75; /* Primary Blue – navigation, headers, primary buttons */
+  --acme-palette-accent: #00acd2; /* Accent Cyan – active states, highlights, accents */
+  --acme-palette-dark: #041115; /* Dark Charcoal – text, icons */
+  --acme-palette-gray: #cccccc; /* Neutral Gray – borders, dividers, disabled */
+  --acme-palette-white: #ffffff; /* White – cards, forms, dropdowns, surfaces */
+  --acme-palette-background: #f5f7f9; /* Light Background – application background */
+
+  /* Short aliases for the palette */
+  --acme-accent: var(--acme-palette-accent);
+  --acme-dark: var(--acme-palette-dark);
+  --acme-gray: var(--acme-palette-gray);
+  --acme-white: var(--acme-palette-white);
+  --acme-background: var(--acme-palette-background);
+
+  /* Brand (derived shades are for hover / pressed states only) */
+  --acme-primary: var(--acme-palette-primary);
+  --acme-primary-hover: #0a5d8f;
+  --acme-primary-active: #013a5c;
+  --acme-primary-subtle: rgba(1, 74, 117, 0.12);
+  --acme-primary-muted: rgba(1, 74, 117, 0.06);
+  /* Primary used as text/border on a surface (lightened in dark theme for contrast) */
+  --acme-primary-text: var(--acme-palette-primary);
+  --acme-accent-subtle: rgba(0, 172, 210, 0.12);
 
   /* Light theme (default) */
-  --acme-bg: #ffffff;
-  --acme-surface: #ffffff;
-  --acme-surface-raised: #f8fafc;
-  --acme-text: #12171c;
-  --acme-text-secondary: #64748b;
-  --acme-text-muted: #94a3b8;
-  --acme-border: #e2e8f0;
-  --acme-border-strong: #cbd5e1;
-  --acme-overlay: rgba(18, 23, 28, 0.45);
-  --acme-sidebar-bg: #ffffff;
-  --acme-navbar-bg: #ffffff;
-  --acme-hover: #f1f5f9;
-  --acme-active: #e8f7fb;
-  --acme-input-bg: #ffffff;
-  --acme-skeleton: #e2e8f0;
-  --acme-skeleton-shine: #f1f5f9;
-  --acme-table-stripe: #f8fafc;
-  --acme-shadow-color: rgba(18, 23, 28, 0.08);
+  --acme-bg: var(--acme-palette-background);
+  --acme-surface: var(--acme-palette-white);
+  --acme-surface-raised: var(--acme-palette-background);
+  --acme-text: var(--acme-palette-dark);
+  --acme-text-secondary: #4f5b66;
+  --acme-text-muted: #7a8590;
+  --acme-border: var(--acme-palette-gray);
+  --acme-border-strong: #b3b3b3;
+  --acme-overlay: rgba(4, 17, 21, 0.45);
+  --acme-sidebar-bg: var(--acme-palette-primary);
+  --acme-navbar-bg: var(--acme-palette-white);
+  --acme-hover: var(--acme-palette-background);
+  --acme-active: var(--acme-accent-subtle);
+  --acme-input-bg: var(--acme-palette-white);
+  --acme-disabled-bg: #ececec;
+  --acme-disabled-text: #8a8a8a;
+  --acme-skeleton: #e4e7ea;
+  --acme-skeleton-shine: var(--acme-palette-background);
+  --acme-table-stripe: var(--acme-palette-background);
+  --acme-shadow-color: rgba(4, 17, 21, 0.08);
+  --acme-tooltip-bg: var(--acme-palette-dark);
+
+  /* Navigation (blue bar, white selected item, cyan indicator) */
+  --acme-nav-bg: var(--acme-palette-primary);
+  --acme-nav-text: var(--acme-palette-white);
+  --acme-nav-hover-bg: rgba(0, 172, 210, 0.22);
+  --acme-nav-active-bg: var(--acme-palette-white);
+  --acme-nav-active-text: var(--acme-palette-primary);
+  --acme-nav-indicator: var(--acme-palette-accent);
 
   /* Semantic */
   --acme-success: #16a34a;
@@ -43,15 +72,17 @@
   /* Typography */
   --acme-font: 'Rubik', system-ui, -apple-system, sans-serif;
   --acme-font-alt: 'Roboto Slab', Georgia, serif;
-  --acme-fs-xs: 0.75rem;
-  --acme-fs-sm: 0.875rem;
-  --acme-fs-base: 1rem;
-  --acme-fs-md: 1.125rem;
-  --acme-fs-lg: 1.25rem;
-  --acme-fs-xl: 1.5rem;
-  --acme-fs-2xl: 1.875rem;
-  --acme-fs-3xl: 2.25rem;
+  --acme-fs-2xs: 0.6875rem; /* 11px – counters, tiny badges, group labels */
+  --acme-fs-xs: 0.75rem; /* 12px – captions, helper text */
+  --acme-fs-sm: 0.875rem; /* 14px – default UI text: inputs, buttons, tables */
+  --acme-fs-base: 1rem; /* 16px – body copy, card titles */
+  --acme-fs-md: 1.125rem; /* 18px – modal titles, H5 */
+  --acme-fs-lg: 1.25rem; /* 20px – H4 */
+  --acme-fs-xl: 1.5rem; /* 24px – H3, section titles */
+  --acme-fs-2xl: 1.75rem; /* 28px – H2, KPI values */
+  --acme-fs-3xl: 2rem; /* 32px – H1, page titles */
   --acme-lh-tight: 1.25;
+  --acme-lh-snug: 1.375;
   --acme-lh-normal: 1.5;
   --acme-lh-relaxed: 1.625;
   --acme-fw-normal: 400;
@@ -82,6 +113,12 @@
   --acme-shadow-md: 0 4px 12px var(--acme-shadow-color);
   --acme-shadow-lg: 0 10px 30px var(--acme-shadow-color);
   --acme-shadow-focus: 0 0 0 3px var(--acme-primary-subtle);
+  --acme-focus-outline: 2px solid var(--acme-primary-text);
+
+  /* Control heights (buttons, inputs, selects share these) */
+  --acme-control-sm: 32px;
+  --acme-control-md: 40px;
+  --acme-control-lg: 48px;
 
   /* Transitions */
   --acme-transition-fast: 150ms ease;
@@ -95,6 +132,9 @@
 }
 
 [data-theme='dark'] {
+  --acme-primary-text: #33c2e2; /* lightened accent – readable on dark surfaces */
+  --acme-primary-subtle: rgba(0, 172, 210, 0.18);
+  --acme-primary-muted: rgba(0, 172, 210, 0.1);
   --acme-bg: #12171c;
   --acme-surface: #1c242c;
   --acme-surface-raised: #24303a;
@@ -104,15 +144,21 @@
   --acme-border: #303b46;
   --acme-border-strong: #3d4a57;
   --acme-overlay: rgba(0, 0, 0, 0.6);
-  --acme-sidebar-bg: #1c242c;
+  --acme-sidebar-bg: #072c44;
   --acme-navbar-bg: #1c242c;
   --acme-hover: #24303a;
   --acme-active: rgba(0, 172, 210, 0.15);
   --acme-input-bg: #1c242c;
+  --acme-disabled-bg: #2a343e;
+  --acme-disabled-text: #6b7785;
   --acme-skeleton: #303b46;
   --acme-skeleton-shine: #3d4a57;
   --acme-table-stripe: #182028;
   --acme-shadow-color: rgba(0, 0, 0, 0.35);
+  --acme-tooltip-bg: #303b46;
+
+  --acme-nav-bg: #072c44;
+  --acme-nav-text: #e6eef3;
 
   --acme-success-bg: rgba(22, 163, 74, 0.18);
   --acme-success-text: #4ade80;

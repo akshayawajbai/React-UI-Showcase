@@ -17,17 +17,17 @@ export function OverviewSection() {
         <Card>
           <div className="showcase-stat">
             <span className="showcase-stat__label">Brand primary</span>
-            <span className="showcase-stat__value" style={{ color: 'var(--acme-primary)' }}>
-              #00ACD2
+            <span className="showcase-stat__value" style={{ color: 'var(--acme-primary-text)' }}>
+              #014A75
             </span>
-            <span style={{ fontSize: 13, color: 'var(--acme-text-secondary)' }}>Cyan accent for actions and focus</span>
+            <span style={{ fontSize: 'var(--acme-fs-xs)', color: 'var(--acme-text-secondary)' }}>Primary blue, with #00ACD2 cyan for accents</span>
           </div>
         </Card>
         <Card>
           <div className="showcase-stat">
             <span className="showcase-stat__label">Sections</span>
             <span className="showcase-stat__value">{NAV_ITEMS.length}</span>
-            <span style={{ fontSize: 13, color: 'var(--acme-text-secondary)' }}>Interactive reference areas</span>
+            <span style={{ fontSize: 'var(--acme-fs-xs)', color: 'var(--acme-text-secondary)' }}>Interactive reference areas</span>
           </div>
         </Card>
         <Card>
@@ -41,7 +41,7 @@ export function OverviewSection() {
                 Dark
               </Badge>
             </div>
-            <span style={{ fontSize: 13, color: 'var(--acme-text-secondary)', marginTop: 8 }}>
+            <span style={{ fontSize: 'var(--acme-fs-xs)', color: 'var(--acme-text-secondary)', marginTop: 8 }}>
               Persisted via localStorage
             </span>
           </div>
@@ -50,7 +50,7 @@ export function OverviewSection() {
 
       <div className="showcase-panel" style={{ marginTop: 20 }}>
         <p className="showcase-block__title">How to use this showcase</p>
-        <p style={{ margin: 0, color: 'var(--acme-text-secondary)', fontSize: 14, lineHeight: 1.6 }}>
+        <p style={{ margin: 0, color: 'var(--acme-text-secondary)', fontSize: 'var(--acme-fs-sm)', lineHeight: 1.6 }}>
           This project is a visual and interaction reference only. Use the left navigation to jump between
           component categories, switch themes from the navbar, and exercise buttons, forms, tables, modals, and
           toasts with local demo state. No ERP business modules are included.

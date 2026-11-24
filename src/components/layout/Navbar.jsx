@@ -79,7 +79,7 @@ export function Navbar({ onMenuClick, searchValue, onSearchChange }) {
           trigger={
             <button type="button" className="nav-icon-btn" aria-label="User menu" style={{ width: 'auto', gap: 8, padding: '0 8px' }}>
               <Avatar name="Alex Morgan" size="sm" />
-              <span className="nav-user-name" style={{ fontSize: 13, color: 'var(--acme-text)' }}>
+              <span className="nav-user-name" style={{ fontSize: 'var(--acme-fs-sm)', color: 'var(--acme-text)' }}>
                 Alex Morgan
               </span>
             </button>

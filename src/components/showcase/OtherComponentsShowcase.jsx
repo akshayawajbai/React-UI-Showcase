@@ -194,8 +194,8 @@ export function OtherComponentsShowcase() {
                 >
                   <Avatar name={u.name} size="sm" />
                   <div>
-                    <div style={{ fontSize: 14, fontWeight: 600 }}>{u.name}</div>
-                    <div style={{ fontSize: 12, color: 'var(--acme-text-secondary)' }}>{u.role}</div>
+                    <div style={{ fontSize: 'var(--acme-fs-sm)', fontWeight: 600 }}>{u.name}</div>
+                    <div style={{ fontSize: 'var(--acme-fs-xs)', color: 'var(--acme-text-secondary)' }}>{u.role}</div>
                   </div>
                 </div>
               ))

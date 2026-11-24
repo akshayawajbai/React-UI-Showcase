@@ -141,7 +141,7 @@ export function MultiSelect({
             })}
           </div>
           <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6, color: 'var(--acme-text-muted)', flexShrink: 0 }}>
-            <span style={{ fontSize: 11 }}>{value.length}</span>
+            <span style={{ fontSize: 'var(--acme-fs-2xs)' }}>{value.length}</span>
             <ChevronDown size={16} style={{ transform: open ? 'rotate(180deg)' : 'none', transition: 'transform 200ms ease' }} />
           </span>
         </button>

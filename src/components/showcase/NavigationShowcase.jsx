@@ -141,16 +141,16 @@ export function NavigationShowcase() {
         <div className="showcase-panel">
           <p className="showcase-block__title">Horizontal tabs</p>
           <Tabs tabs={H_TABS} activeId={hTab} onChange={setHTab} />
-          <p style={{ marginTop: 16, fontSize: 14, color: 'var(--acme-text-secondary)' }}>
+          <p style={{ marginTop: 16, fontSize: 'var(--acme-fs-sm)', color: 'var(--acme-text-secondary)' }}>
             Selected: <strong style={{ color: 'var(--acme-text)' }}>{hTab}</strong>
           </p>
         </div>
-        <div className="showcase-panel" style={{ display: 'flex', gap: 16 }}>
+        <div className="showcase-panel" style={{ display: 'flex', flexWrap: 'wrap', gap: 16 }}>
           <div>
             <p className="showcase-block__title">Vertical tabs</p>
             <Tabs tabs={V_TABS} activeId={vTab} onChange={setVTab} orientation="vertical" />
           </div>
-          <div style={{ flex: 1, paddingTop: 28, fontSize: 14, color: 'var(--acme-text-secondary)' }}>
+          <div style={{ flex: '1 1 160px', paddingTop: 28, fontSize: 'var(--acme-fs-sm)', color: 'var(--acme-text-secondary)' }}>
             Content for <strong style={{ color: 'var(--acme-text)' }}>{vTab}</strong> settings panel.
           </div>
         </div>

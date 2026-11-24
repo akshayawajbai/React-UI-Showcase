@@ -57,7 +57,7 @@ export function PageLayout({ children }) {
           mobileOpen={mobileOpen}
           onClose={() => setMobileOpen(false)}
         />
-        <main className="page-content" style={{ flex: 1, minWidth: 0, padding: '32px 28px 80px' }}>
+        <main className="page-content" style={{ flex: 1, minWidth: 0, padding: 'var(--acme-space-6) var(--acme-space-6) 80px' }}>
           {filteredChildren}
         </main>
       </div>

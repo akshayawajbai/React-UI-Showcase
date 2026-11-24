@@ -176,10 +176,10 @@ export function LoadingShowcase() {
           {pageLoading ? (
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12, padding: 24 }}>
               <Spinner size="lg" />
-              <span style={{ fontSize: 14, color: 'var(--acme-text-secondary)' }}>Loading page content…</span>
+              <span style={{ fontSize: 'var(--acme-fs-sm)', color: 'var(--acme-text-secondary)' }}>Loading page content…</span>
             </div>
           ) : (
-            <p style={{ margin: 0, fontSize: 14, color: 'var(--acme-text-secondary)' }}>
+            <p style={{ margin: 0, fontSize: 'var(--acme-fs-sm)', color: 'var(--acme-text-secondary)' }}>
               Trigger “Page loading” to preview this state.
             </p>
           )}
@@ -192,7 +192,7 @@ export function LoadingShowcase() {
             <AccountingLoader />
           ) : (
             <div style={{ padding: '20px 8px', textAlign: 'center' }}>
-              <p style={{ margin: '0 0 12px', fontSize: 14, color: 'var(--acme-text-secondary)' }}>
+              <p style={{ margin: '0 0 12px', fontSize: 'var(--acme-fs-sm)', color: 'var(--acme-text-secondary)' }}>
                 Accounting data is ready. Run the loader again to preview.
               </p>
               <Button
