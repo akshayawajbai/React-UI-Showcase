@@ -6,7 +6,7 @@ export function OverviewSection() {
   return (
     <section id="overview" className="showcase-section">
       <div className="page-hero">
-        <img src="/acme-logo.png" alt="ACME" className="page-hero__logo" />
+        <img src={`${import.meta.env.BASE_URL}acme-logo.png`} alt="ACME" className="page-hero__logo" />
         <h1 className="page-hero__title">ACME UI Design System</h1>
         <p className="page-hero__subtitle">
           A centralized showcase of reusable components, visual styles, and interaction patterns for ACME ERP.

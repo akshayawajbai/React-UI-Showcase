@@ -40,7 +40,7 @@ export function NavigationShowcase() {
         <p className="showcase-block__title">Navbar example</p>
         <div className="demo-navbar">
           <div className="brand-mark">
-            <img src="/acme-logo.png" alt="ACME" className="brand-mark__img" />
+            <img src={`${import.meta.env.BASE_URL}acme-logo.png`} alt="ACME" className="brand-mark__img" />
           </div>
           <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
             <Button size="sm" variant="ghost" onClick={() => showToast({ type: 'info', title: 'Docs' })}>

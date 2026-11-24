@@ -15,7 +15,7 @@ export function Navbar({ onMenuClick, searchValue, onSearchChange }) {
       </button>
 
       <a href="#overview" className="brand-mark" aria-label="ACME home">
-        <img src="/acme-logo.png" alt="ACME" className="brand-mark__img" />
+        <img src={`${import.meta.env.BASE_URL}acme-logo.png`} alt="ACME" className="brand-mark__img" />
       </a>
 
       <div className="nav-search">
